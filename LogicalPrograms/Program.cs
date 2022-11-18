@@ -11,31 +11,18 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number of Coupens required:");
-            int CoupenLength =Convert.ToInt32(Console.ReadLine());
-            int[] totalCoupons = new int[CoupenLength];
-            int randomNum;
-            Random random = new Random();
-            for (int i = 0; i < totalCoupons.Length; i++)
+            Console.WriteLine("SquareRoot Program");
+            Console.WriteLine("Enter the number to find squareroot:");
+            int num = Convert.ToInt32(Console.ReadLine());            
+            float squareRoot = num / 2;
+            float temp = 0;
+            while(squareRoot != temp)
             {
-            moving:
-                randomNum = random.Next();
-                for (int x = 0; x < totalCoupons.Length; x++)
-                {
-                    if (totalCoupons[x] == randomNum)
-                    {
-                        x--;
-                        goto moving;
-                    }
-                }
-                totalCoupons[i] = randomNum;
+                temp = squareRoot;
+                squareRoot = (num / temp + temp) / 2;
             }
-            for (int i = 0; i < totalCoupons.Length; i++)
-            {
-                Console.WriteLine(totalCoupons[i] + " ");
-            }
-
-
+            Console.WriteLine($"Square Root of {num} is :"+squareRoot);
+            Console.ReadLine();
         }
     }
 }
