@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,19 +11,20 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Logical Programs");
-            Console.WriteLine("Prime Number Program");
-            Console.WriteLine("Enter the number to be checked:");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int reverse = 0,rem;
-            while(n!=0)
+            var sw = Stopwatch.StartNew();
+            Console.WriteLine("Start the timer by pressing any key");
+            String timerStart = Console.ReadLine();
+            while(timerStart != null)
             {
-                rem = n % 10;
-                reverse = reverse * 10 + rem;
-                n = n / 10;
+                sw.Start(); //to start the timer 
+                Console.WriteLine("Stop the timer by pressing any key");
+                Console.ReadLine();
+                sw.Stop(); //To stop the timer
+                break;
             }
-            Console.WriteLine("Reversed Number is :" + reverse);
+            Console.WriteLine("Time elapsed :{0}ms", sw.ElapsedTicks);
             Console.ReadLine();
+            
         }
     }
 }
