@@ -11,17 +11,11 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("SquareRoot Program");
-            Console.WriteLine("Enter the number to find squareroot:");
-            int num = Convert.ToInt32(Console.ReadLine());            
-            float squareRoot = num / 2;
-            float temp = 0;
-            while(squareRoot != temp)
-            {
-                temp = squareRoot;
-                squareRoot = (num / temp + temp) / 2;
-            }
-            Console.WriteLine($"Square Root of {num} is :"+squareRoot);
+            Console.WriteLine("Temperature Conversion  Program");
+            Console.WriteLine("Enter the number temperature in Fahrenheit:");
+            double fahrenheit = Convert.ToDouble(Console.ReadLine());
+            double celsius = (fahrenheit - 32) * 5 / 9;
+            Console.WriteLine("Temperature in Celsius is :" + celsius);
             Console.ReadLine();
         }
     }
